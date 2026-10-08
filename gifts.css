@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Niconne;
+    background-image: url(https://img.magnific.com/free-vector/birthday-background-with-colorful-balloons_206725-376.jpg?semt=ais_hybrid&w=740&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.navlinks{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+    gap: 40px;
+    margin-right: 150px;
+    letter-spacing: 10px;
+}
+.logo{
+    border-radius: 50%;
+    width: 10%;
+    padding: 20px;
+   
+}
+main{
+   display: flex;
+  
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+gap: 20px;
+padding: 5px;
+
+}
+.airtime{
+   border: 2px solid red;
+    height: 15vh;
+    background-color: white;
+   border-radius: 20%;
+}

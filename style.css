@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body{
+    font-family: "Niconne",cursive;
+   background-image: url(https://img.magnific.com/free-vector/birthday-background-with-colorful-balloons_206725-376.jpg?semt=ais_hybrid&w=740&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: large;
+    height: 100vh;
+
+}
+.navlinks{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+    gap: 40px;
+    margin-right: 150px;
+    letter-spacing: 10px;
+}
+.heading{
+    font-family: Niconne;
+    font-size: 6.5rem;
+    text-align: start;
+   padding: 70px;
+    color: white;
+    width: 30%;
+    line-height: 110px;
+   
+}
+.logo{
+    border-radius: 50%;
+    width: 10%;
+    padding: 20px;
+   
+}
+.wish{
+    width: 30%;
+    color: white;
+    font-family: cursive;
+   border-radius: 50px;
+    padding: 20px;
+    background-color: darkred;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.cake{
+    display: flex;
+    justify-content: space-between;
+}
+.caake{
+    width: 25%;
+    border-radius: 50%;
+    padding: 20px;
+}
+.caaake{
+    width: 25%;
+    border-radius: 50%;
+    padding: 20px;
+}
+@media (width<550px) {
+    body{  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: small;}
+    .cake{
+        display: flex;
+        justify-content: end;
+    }
+}
+
+
+    
+  

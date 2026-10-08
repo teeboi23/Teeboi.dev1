@@ -71,7 +71,7 @@ body {
     letter-spacing: 4px;
   }
   .navlinks a {
-    font-size: 36px ;
+    font-size: 36px !important;
   }
   .cake {
     flex-wrap: wrap;
@@ -114,7 +114,7 @@ body {
     padding: 0 10px;
   }
   .navlinks a {
-    font-size: 26px ;
+    font-size: 26px !important;
   }
   .heading {
     font-size: 2.8rem;

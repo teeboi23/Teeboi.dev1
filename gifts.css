@@ -2,13 +2,14 @@
   padding: 0;
   margin: 0;
 }
+
 body {
   font-family: Niconne;
   background-image: url(https://img.magnific.com/free-vector/birthday-background-with-colorful-balloons_206725-376.jpg?semt=ais_hybrid&w=740&q=80);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  
 }
 
 .navlinks {

@@ -11,6 +11,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-size: large;
+  height: 100vh;
 }
 .navlinks {
   display: flex;
@@ -60,6 +61,7 @@ body {
   padding: 20px;
 }
 @media (max-width: 900px) {
+    
   .logo {
     width: 16%;
   }
@@ -112,7 +114,7 @@ body {
     padding: 0 10px;
   }
   .navlinks a {
-    font-size: 26px !important;
+    font-size: 26px ;
   }
   .heading {
     font-size: 2.8rem;

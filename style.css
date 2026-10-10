@@ -21,7 +21,31 @@ body {
   gap: 40px;
   margin-right: 150px;
   letter-spacing: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+  /* Apply keyframe animation */
+  animation: pulseGlow 1.5s infinite alternate;
 }
+
+/* Keyframe definition for blinking glow */
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.98);
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+    text-shadow:
+      0 0 10px #ffffff,
+      0 0 20px #ff3366;
+  }
+}
+
 .heading {
   font-family: Niconne;
   font-size: 6.5rem;
@@ -61,7 +85,6 @@ body {
   padding: 20px;
 }
 @media (max-width: 900px) {
-    
   .logo {
     width: 16%;
   }
@@ -92,7 +115,7 @@ body {
   .wish {
     width: auto;
     margin: 0 20px 20px;
-    }
+  }
 }
 @media (max-width: 550px) {
   body {
@@ -130,4 +153,4 @@ body {
     margin: 0 12px 20px;
     font-size: 0.95rem;
   }
-} 
+}

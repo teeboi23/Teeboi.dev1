@@ -1,30 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faithful's day</title>
-    <link rel="stylesheet" href="/style.css">
-     <link rel="shortcut icon" href="https://images.teepublic.com/derived/production/designs/5929662_0/1568269280/i_p:c_eae0c7,s_630,q_90.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://images.teepublic.com/derived/production/designs/5929662_0/1568269280/i_p:c_eae0c7,s_630,q_90.jpg" type="image/x-icon">
 </head>
 <body>
-   
-    <main>
-       <img class="logo" src="https://png.pngtree.com/png-vector/20200719/ourmid/pngtree-happy-birthday-png-background-design-png-image_2308902.jpg" alt="">
-        <div class="headtag">
-        <div class="navlinks">
-            <a style="color: white; font-size: 60px; "href="/index.html">Home</a>
-            <a style="color: white; font-size: 60px; "href="/gifts.html">Gifts</a>
-            <a style="color: white; font-size: 60px; "href="/messages.html">Messages</a>
+    <div class="hearts" aria-hidden="true">
+        <span>❤</span><span>💖</span><span>❤</span><span>🎈</span><span>💖</span><span>❤</span><span>🎈</span><span>💖</span>
+    </div>
+    <div id="confetti" aria-hidden="true"></div>
 
-        </div>
-        <div class="cake"><h1 class="heading">Happy birthday sissy</h1><img class="caaake" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJixkbNdMkuLwUFPasA_ZHupGrZdDikLn1ISuaOQedxA&s=10" alt=""><img class="caake" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7wb4JVm3KtWM1XZ8Sa2DyFvj5USrZBnpNoEmZN9jFrw&s" alt="Red cake"></div> 
-         <p class="wish">May this new year bring you endless joy, incredible success, and all the love you deserve. Thank you for always being a bright spot in my life, bringing so much laughter, and being the best sister anyone could ask for.🥰😘😘</p>
-         
+    <header>
+        <nav class="navlinks">
+            <a class="active" href="index.html">Home</a>
+            <a href="gifts.html">Gifts</a>
+            <a href="messages.html">Messages</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="heading">Happy birthday<span>sissy</span></h1>
+            <div class="cake">
+                <figure class="polaroid left">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJixkbNdMkuLwUFPasA_ZHupGrZdDikLn1ISuaOQedxA&s=10" alt="Birthday cake">
+                </figure>
+                <figure class="polaroid right">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7wb4JVm3KtWM1XZ8Sa2DyFvj5USrZBnpNoEmZN9jFrw&s" alt="Red cake">
+                </figure>
+            </div>
+        </section>
+
+        <section class="wish-card">
+            <p class="wish">May this new year bring you endless joy, incredible success, and all the love you deserve. Thank you for always being a bright spot in my life, bringing so much laughter, and being the best sister anyone could ask for. 🥰😘😘</p>
+        </section>
     </main>
-     
+
+    <script>
+        (function () {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var box = document.getElementById('confetti');
+            var colors = ['#ff1744', '#ff6fa3', '#ffc857', '#ffffff', '#ff8a00', '#c2185b'];
+            for (var i = 0; i < 45; i++) {
+                var p = document.createElement('i');
+                p.style.left = Math.random() * 100 + '%';
+                p.style.background = colors[i % colors.length];
+                p.style.animationDelay = (Math.random() * 1.2) + 's';
+                p.style.animationDuration = (2.5 + Math.random() * 2) + 's';
+                p.style.transform = 'rotate(' + Math.random() * 360 + 'deg)';
+                box.appendChild(p);
+            }
+            setTimeout(function () { box.remove(); }, 6000);
+        })();
+    </script>
 </body>
 </html>

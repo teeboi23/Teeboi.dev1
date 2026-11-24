@@ -1,83 +1,178 @@
-* {
-  padding: 0;
-  margin: 0;
+:root {
+    --red: #e5173f;
+    --cherry: #a30d2d;
+    --deep: #5c0518;
+    --pink: #ff6fa3;
+    --gold: #ffc857;
+    --blush: #fff0f3;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: Niconne;
-  background-image: url(https://img.magnific.com/free-vector/birthday-background-with-colorful-balloons_206725-376.jpg?semt=ais_hybrid&w=740&q=80);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: var(--blush);
+    background:
+        radial-gradient(circle at 15% 10%, rgba(255, 111, 163, .55), transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(255, 200, 87, .35), transparent 40%),
+        linear-gradient(160deg, var(--red) 0%, var(--cherry) 55%, var(--deep) 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
+/* floating hearts and balloons */
+.hearts { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+.hearts span {
+    position: absolute;
+    bottom: -60px;
+    font-size: 28px;
+    opacity: .4;
+    animation: floatUp 14s linear infinite;
+}
+.hearts span:nth-child(1) { left: 6%;  animation-delay: 0s;  font-size: 22px; }
+.hearts span:nth-child(2) { left: 18%; animation-delay: 3s;  font-size: 34px; }
+.hearts span:nth-child(3) { left: 32%; animation-delay: 6s; }
+.hearts span:nth-child(4) { left: 46%; animation-delay: 1s;  font-size: 36px; }
+.hearts span:nth-child(5) { left: 60%; animation-delay: 8s; }
+.hearts span:nth-child(6) { left: 72%; animation-delay: 4s;  font-size: 20px; }
+.hearts span:nth-child(7) { left: 84%; animation-delay: 10s; font-size: 38px; }
+.hearts span:nth-child(8) { left: 94%; animation-delay: 2s; }
+
+@keyframes floatUp {
+    to { transform: translateY(-115vh) rotate(25deg); }
+}
+
+/* navigation */
+header { position: relative; z-index: 5; padding: 18px 16px 0; display: flex; justify-content: center; }
+
 .navlinks {
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  justify-content: end;
-  gap: 40px;
-  margin-right: 150px;
-  letter-spacing: 10px;
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
-.logo {
-  border-radius: 50%;
-  width: 10%;
-  padding: 20px;
+.navlinks a {
+    color: var(--blush);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    transition: background .2s, color .2s;
 }
+.navlinks a:hover { background: rgba(255, 255, 255, .25); }
+.navlinks a.active { background: var(--gold); color: var(--deep); font-weight: 600; }
+.navlinks a:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* page */
 main {
-  display: flex;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 5px;
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 18px 90px;
 }
-.airtime {
-  border: 2px solid red;
-  height: 15vh;
-  background-color: white;
-  border-radius: 20%;
+
+.title {
+    font-family: 'Niconne', cursive;
+    font-weight: 400;
+    text-align: center;
+    font-size: clamp(44px, 10vw, 80px);
+    line-height: 1.1;
+    color: var(--gold);
+    text-shadow: 0 4px 0 #b4570a, 0 10px 28px rgba(0, 0, 0, .35);
+    margin: 14px 0 6px;
 }
-@media (max-width: 900px) {
-  .navlinks {
-    margin-right: 20px;
-    gap: 20px;
-    letter-spacing: 4px;
-  }
-  .navlinks a {
-    font-size: 36px !important;
-  }
-  main {
+
+.intro {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 28px;
+    color: var(--blush);
+}
+
+.grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 12px;
-  }
-  .message {
-    border-radius: 12%;
-    font-size: 19px;
-  }
+    gap: 18px;
 }
-@media (max-width: 550px) {
-  .navlinks {
-    justify-content: center;
-    align-items: center;
-    margin-right: 0;
-    gap: 14px;
-    letter-spacing: 2px;
-    padding: 10px;
-  }
-  .navlinks a {
-    font-size: 26px !important;
-  }
-  main {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 12px;
-  }
-  .message {
-    min-height: auto;
-    border-radius: 28px;
-    padding: 20px;
-    font-size: 18px;
-  }
+
+/* gift cards */
+.airtime {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 20px 22px;
+    text-align: left;
+    font-family: inherit;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .26), rgba(255, 255, 255, .08));
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 22px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .28);
+    transition: transform .15s, background .2s;
+}
+.airtime:hover { transform: translateY(-3px); }
+.airtime:active { transform: scale(.98); }
+.airtime:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+.airtime .tag { font-size: 13px; font-weight: 500; color: var(--gold); }
+
+.airtime .code {
+    font-size: clamp(17px, 4.4vw, 22px);
+    font-weight: 600;
+    letter-spacing: .04em;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+}
+
+.airtime .hint {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .22);
+}
+
+.airtime.copied { background: linear-gradient(145deg, rgba(255, 200, 87, .4), rgba(255, 111, 163, .25)); }
+.airtime.copied .hint { background: var(--gold); color: var(--deep); font-weight: 600; }
+
+/* copy confirmation */
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 30px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 30;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--deep);
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+    transition: opacity .2s, transform .2s;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* phones */
+@media (max-width: 620px) {
+    .grid { grid-template-columns: 1fr; gap: 14px; }
+    .navlinks a { padding: 9px 15px; font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hearts span { animation: none; bottom: auto; top: 85%; }
+    .airtime, .toast { transition: none; }
 }
